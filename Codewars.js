@@ -71,3 +71,32 @@ function incrementString(str){
         return +d + 1 + ns.replace(/9/g, '0');
       });
   }
+
+
+//   Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+//My solution:
+var moveZeros = function (arr) {
+    // TODO: Program me
+    const arr1 = [];
+    const arr2 = [];
+    arr.map(e=>{
+      if(e!==0){
+        arr1.push(e)
+      }else{
+        arr2.push(e)
+      }
+    })
+    console.log("arr1",arr1,"arr2",arr2)
+    const solution = [...arr1,...arr2]
+  return solution;
+  }
+//   alt solutions:
+var moveZeros = function (arr) {
+    return arr.filter(function(x) {return x !== 0}).concat(arr.filter(function(x) {return x === 0;}));
+  }
+
+  var moveZeros = function (arr) {
+    return arr
+      .filter((val) => val !== 0)
+      .concat(arr.filter((val) => val === 0));
+  }
